@@ -8,9 +8,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>TheamParkRide</artifactId>
+	<artifactId>themeparkride</artifactId>
 	<version>1.0.0</version>
-	<name>TheamParkRide</name>
+	<name>ThemeParkRide</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -130,27 +130,23 @@
 				</configuration>
 			</plugin>
 			<plugin>
-        <groupId>org.eclipse.jkube</groupId>
-        <artifactId>kubernetes-maven-plugin</artifactId>
-        <version>${jkube.version}</version>
-        <configuration>
-          <images>
-            <image>
-              <name>helloworld-java:${project.version}</name>
-              <alias>hello-world</alias>
-              <build>
-                <from>openjdk:latest</from>
-                <cmd>java -jar maven/${project.artifactId}-${project.version}.jar</cmd>
-              </build>
-              <run>
-                <wait>
-                  <log>Hello World!</log>
-                </wait>
-              </run>
-            </image>
-          </images>
-        </configuration>
-      </plugin>
+				<groupId>org.eclipse.jkube</groupId>
+				<artifactId>kubernetes-maven-plugin</artifactId>
+				<version>${jkube.version}</version>
+				<configuration>
+					<images>
+						<image>
+							<name>${project.artifactId}:${project.version}</name>
+							<alias>${project.artifactId}</alias>
+							<build>
+								<from>openjdk:${java.version}</from>
+								<cmd>java -jar maven/${project.artifactId}-${project.version}.jar</cmd>
+							</build>
+							
+						</image>
+					</images>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>

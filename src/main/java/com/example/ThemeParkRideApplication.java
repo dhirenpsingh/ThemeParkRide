@@ -9,10 +9,10 @@ import com.example.entity.ThemeParkRide;
 import com.example.repository.ThemeParkRideRepository;
 
 @SpringBootApplication
-public class TheamParkRideApplication {
+public class ThemeParkRideApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TheamParkRideApplication.class, args);
+		SpringApplication.run(ThemeParkRideApplication.class, args);
 	}
 
 	@Bean
