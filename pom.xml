@@ -142,9 +142,9 @@
 								<from>openjdk:${java.version}</from>
 								<cmd>java -jar maven/${project.artifactId}-${project.version}.jar</cmd>
 							</build>
-							
 						</image>
 					</images>
+					
 				</configuration>
 			</plugin>
 
